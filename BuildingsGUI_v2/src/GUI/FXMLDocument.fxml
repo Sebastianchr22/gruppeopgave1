@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLDocumentController">
+   <children>
+      <GridPane prefHeight="600.0" prefWidth="800.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="195.66610717773438" minHeight="10.0" prefHeight="129.69424438476562" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="270.3057556152344" minHeight="10.0" prefHeight="270.3057556152344" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <LineChart fx:id="SensorChart" maxHeight="150.0" minHeight="200.0" prefHeight="150.0" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.valignment="TOP">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <Rectangle fx:id="SettingsBackdrop" disable="true" fill="#0000004d" height="600.0" stroke="TRANSPARENT" strokeType="INSIDE" visible="false" width="800.0" GridPane.columnSpan="3" GridPane.rowSpan="3" />
+            <Rectangle height="80.0" onMouseClicked="#CreateNewBuilding" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="450.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <fill>
+                  <LinearGradient endX="1.0" startY="1.0">
+                     <stops>
+                        <Stop color="#29a768" />
+                        <Stop color="#3dc981" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Label onMouseClicked="#CreateNewBuilding" text="CREATE NEW BUILDING" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="20.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <GridPane fx:id="CreateMenu" prefHeight="200.0" prefWidth="800.0" GridPane.columnSpan="3" GridPane.rowIndex="2">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+                  <ColumnConstraints />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="81.66607666015625" minHeight="10.0" prefHeight="60.29876708984375" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="118.1915283203125" minHeight="10.0" prefHeight="60.7381591796875" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="119.82424926757812" minHeight="10.0" prefHeight="66.2618408203125" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="126.29873657226562" minHeight="10.0" prefHeight="81.84710693359375" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Rectangle fill="WHITE" height="270.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" GridPane.columnSpan="2" GridPane.rowSpan="4" />
+                  <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#CloseCreate" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <image>
+                        <Image url="@Icons/icons8-sort-down-50.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="NameField" maxHeight="40.0" maxWidth="300.0" minHeight="40.0" minWidth="300.0" prefHeight="40.0" prefWidth="300.0" promptText="Name" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="AddrField" maxHeight="40.0" maxWidth="300.0" minHeight="40.0" minWidth="300.0" prefHeight="40.0" prefWidth="300.0" promptText="Address" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </TextField>
+                  <Rectangle fill="#134d83" height="42.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="140.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Label onMouseClicked="#CreateBuilding" text="CREATE" textFill="WHITE" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <ListView fx:id="SensorsList" prefHeight="329.0" prefWidth="201.0" GridPane.columnIndex="1" GridPane.rowSpan="2" />
+            <ListView fx:id="BuildingsList" prefHeight="328.0" prefWidth="243.0" GridPane.rowSpan="2" />
+            <Button mnemonicParsing="false" onAction="#RemoveSensor" text="Remove" GridPane.columnIndex="2">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#NewCO2" text="CO2 Sensor" GridPane.columnIndex="2" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="50.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#NewTemp" text="Temp. Sensor" GridPane.columnIndex="2" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#SimulateSensor" text="Simulate Sensor" GridPane.columnIndex="2">
+               <font>
+                  <Font size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets top="-65.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
