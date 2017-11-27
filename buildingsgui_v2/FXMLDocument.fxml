@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buildingsgui_v2.FXMLDocumentController">
+   <children>
+      <GridPane prefHeight="600.0" prefWidth="800.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="195.66610717773438" minHeight="10.0" prefHeight="129.69424438476562" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="270.3057556152344" minHeight="10.0" prefHeight="270.3057556152344" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Rectangle arcHeight="100.0" arcWidth="100.0" fill="WHITE" height="55.0" onMouseClicked="#ShowBuilding" stroke="BLACK" strokeType="INSIDE" width="55.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fitHeight="150.0" fitWidth="35.0" onMouseClicked="#ShowBuilding" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <image>
+                  <Image url="@Icons/icons8-building-50.png" />
+               </image>
+            </ImageView>
+            <Label onMouseClicked="#ShowBuilding" text="Address" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <GridPane.margin>
+                  <Insets top="90.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Rectangle fx:id="SettingsBackdrop" disable="true" fill="#0000004d" height="600.0" stroke="TRANSPARENT" strokeType="INSIDE" visible="false" width="800.0" GridPane.columnSpan="3" GridPane.rowSpan="3" />
+            <Rectangle height="80.0" onMouseClicked="#CreateNewBuilding" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="450.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <fill>
+                  <LinearGradient endX="1.0" startY="1.0">
+                     <stops>
+                        <Stop color="#29a768" />
+                        <Stop color="#3dc981" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Label onMouseClicked="#CreateNewBuilding" text="CREATE NEW BUILDING" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="20.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <GridPane fx:id="CreateMenu" prefHeight="200.0" prefWidth="800.0" GridPane.columnSpan="3" GridPane.rowIndex="2">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+                  <ColumnConstraints />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="81.66607666015625" minHeight="10.0" prefHeight="60.29876708984375" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="118.1915283203125" minHeight="10.0" prefHeight="60.7381591796875" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="119.82424926757812" minHeight="10.0" prefHeight="66.2618408203125" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="126.29873657226562" minHeight="10.0" prefHeight="81.84710693359375" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Rectangle fill="WHITE" height="270.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" GridPane.columnSpan="2" GridPane.rowSpan="4" />
+                  <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#CloseCreate" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <image>
+                        <Image url="@Icons/icons8-sort-down-50.png" />
+                     </image>
+                  </ImageView>
+                  <TextField maxHeight="40.0" maxWidth="300.0" minHeight="40.0" minWidth="300.0" prefHeight="40.0" prefWidth="300.0" promptText="Name" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </TextField>
+                  <TextField maxHeight="40.0" maxWidth="300.0" minHeight="40.0" minWidth="300.0" prefHeight="40.0" prefWidth="300.0" promptText="Address" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </TextField>
+                  <Rectangle fill="#134d83" height="42.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="140.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <Label onMouseClicked="#CreateBuilding" text="CREATE" textFill="WHITE" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <GridPane fx:id="BuildingSensors" maxHeight="550.0" minHeight="550.0" prefHeight="550.0" prefWidth="794.0" GridPane.columnSpan="3" GridPane.rowSpan="3" GridPane.valignment="BOTTOM">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Rectangle fill="WHITE" height="550.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" GridPane.columnSpan="3" GridPane.rowSpan="3" GridPane.valignment="BOTTOM" />
+                  <ImageView fx:id="SettingsIcon" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#ShowBuildingOptions" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@Icons/ic_view_headline_black_24dp_2x.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="15.0" top="15.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <Circle fill="WHITE" radius="80.0" stroke="#1c49a1" strokeType="INSIDE" strokeWidth="8.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets top="75.0" />
+                     </GridPane.margin></Circle>
+                  <Rectangle fill="WHITE" height="110.0" stroke="WHITE" strokeType="INSIDE" width="160.0" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets top="190.0" />
+                     </GridPane.margin>
+                  </Rectangle>
+                  <Label text="SENSOR NAME" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="55.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="25°C" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                     <GridPane.margin>
+                        <Insets bottom="20.0" top="70.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#CloseBuilding" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@Icons/icons8-sort-down-50.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </GridPane>
+            <Rectangle fx:id="BuildingBackdrop" disable="true" fill="#0000004d" height="600.0" stroke="TRANSPARENT" strokeType="INSIDE" width="800.0" GridPane.rowSpan="3" />
+            <GridPane fx:id="SensorsGrid" maxHeight="500.0" minHeight="550.0" prefHeight="550.0" GridPane.rowSpan="3" GridPane.valignment="BOTTOM">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="96.11072540283203" minHeight="10.0" prefHeight="63.84711837768555" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="112.15288162231445" minHeight="10.0" prefHeight="79.34103393554688" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="129.0421600341797" minHeight="10.0" prefHeight="69.86795043945312" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="163.9700927734375" minHeight="10.0" prefHeight="76.41921997070312" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="203.12472534179688" minHeight="10.0" prefHeight="124.58078002929688" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="137.58718872070312" minHeight="10.0" prefHeight="137.58718872070312" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Rectangle fill="WHITE" height="550.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="270.0" GridPane.rowSpan="6" />
+                  <ImageView fitHeight="50.0" fitWidth="35.0" onMouseClicked="#CloseBuildingOptions" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                     <image>
+                        <Image url="@Icons/ic_clear_black_24dp_2x.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="15.0" top="15.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <GridPane GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0627899169922" minWidth="10.0" prefWidth="69.39763641357422" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.94086074829102" minWidth="10.0" prefWidth="196.60236358642578" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="75.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@Icons/icons8-smoke-detector-50.png" />
+                           </image>
+                        </ImageView>
+                        <Label opacity="1" text="CO2 SENSOR" textAlignment="JUSTIFY" GridPane.columnIndex="1" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="25.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Rectangle fill="#1f93ff00" height="65.0" onMouseClicked="#co2sensorClick" stroke="#dadada" strokeType="INSIDE" strokeWidth="2.0" width="271.0" />
+                     </children>
+                  </GridPane>
+                  <GridPane GridPane.rowIndex="2">
+                     <children>
+                        <ImageView fitHeight="75.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@Icons/icons8-thermometer-50.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="TEMP. SENSOR" textAlignment="JUSTIFY" GridPane.columnIndex="1" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="25.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Rectangle fill="#1f93ff00" height="65.0" onMouseClicked="#tempSensor" stroke="#dadada" strokeType="INSIDE" strokeWidth="2.0" width="271.0" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0627899169922" minWidth="10.0" prefWidth="69.39763641357422" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.94086074829102" minWidth="10.0" prefWidth="196.60236358642578" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <GridPane GridPane.rowIndex="3">
+                     <children>
+                        <ImageView fitHeight="75.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@Icons/icons8-building-50.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="REMOVE BUILDING" textAlignment="JUSTIFY" GridPane.columnIndex="1" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="25.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Rectangle fill="#1f93ff00" height="65.0" onMouseClicked="#RemoveBuilding" stroke="#dadada" strokeType="INSIDE" strokeWidth="2.0" width="271.0" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0627899169922" minWidth="10.0" prefWidth="69.39763641357422" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.94086074829102" minWidth="10.0" prefWidth="196.60236358642578" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
